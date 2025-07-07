@@ -1,3 +1,111 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* src/styles.css */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #eef4fa;
+}
+
+.main-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.title {
+  color: #004080;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.card-container {
+  background: white;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: auto;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #0066cc;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #004a99;
+}
+
+.summary {
+  text-align: left;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.confirm {
+  background-color: #28a745;
+}
+
+.callback {
+  background-color: #17a2b8;
+}
+
+.back {
+  background-color: #6c757d;
+}
+
+.truck-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.truck-card {
+  border: 2px solid transparent;
+  border-radius: 12px;
+  padding: 10px;
+  background-color: #f4f4f4;
+  cursor: pointer;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.truck-card:hover {
+  border-color: #007bff;
+}
+
+.truck-card.selected {
+  border-color: #28a745;
+  background-color: #eaffea;
+}
+
+.truck-image {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.form-section input[type='number'] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
