@@ -1,49 +1,57 @@
-/* src/styles.css */
+/* src/index.css */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background: #eef4fa;
 }
 
-.main-container {
+.main-container, .main-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
-  text-align: center;
+  
+  box-sizing: border-box;
 }
 
 .title {
-  color: #004080;
+  color: #032250;
   margin-bottom: 20px;
   font-size: 28px;
+  text-align: center;
 }
 
 .card-container {
-  background: white;
+  background: rgb(255, 255, 255);
   border-radius: 12px;
-  max-width: 500px;
+  max-width: 600px;
   margin: auto;
   padding: 30px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-input, select {
+input, select, textarea {
   width: 100%;
   padding: 12px;
   margin: 12px 0;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #a09f9f;
+  box-sizing: border-box;
+  background-color: #ffffff;
 }
 
 button {
-  background-color: #0066cc;
+  background-color: #033e79;
   color: white;
   padding: 12px 20px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  margin-top: 10px;
 }
 
 button:hover {
-  background-color: #004a99;
+  background-color: #0550c0;
 }
 
 .summary {
@@ -52,21 +60,15 @@ button:hover {
 
 .button-group {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  gap: 10px;
   margin-top: 20px;
 }
 
-.confirm {
-  background-color: #28a745;
-}
-
-.callback {
-  background-color: #17a2b8;
-}
-
-.back {
-  background-color: #6c757d;
-}
+.confirm { background-color: #28a745; }
+.callback { background-color: #17a2b8; }
+.back { background-color: #6c757d; }
 
 .truck-grid {
   display: grid;
@@ -86,9 +88,8 @@ button:hover {
 }
 
 .truck-card:hover {
-  border-color: #007bff;
+  border-color: #051629;
 }
-
 .truck-card.selected {
   border-color: #28a745;
   background-color: #eaffea;
@@ -102,10 +103,62 @@ button:hover {
   margin-bottom: 10px;
 }
 
-.form-section input[type='number'] {
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+.form-section {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #cf7171;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  color: white;
 }
+
+/* ✅ Responsive styles */
+@media (max-width: 768px) {
+  .title {
+    font-size: 22px;
+  }
+
+  .truck-image {
+    height: 100px;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-container, .form-section {
+    padding: 15px;
+  }
+
+  .truck-image {
+    height: 80px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+}
+
+.autocomplete-dropdown {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 5px;
+  z-index: 1000;
+  position: absolute;
+}
+
+.autocomplete-dropdown div {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.autocomplete-dropdown div:hover {
+  background-color: #eee;
+}
+

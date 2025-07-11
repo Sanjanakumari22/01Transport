@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { calculateFare } from '../utils/calculateFare';
 
 
-function BookingSummary({ data, goBack }) {
+function BookingSummary({ data, goBack, nextStep }) {
     const [fare, setFare] = useState(0);
     
     useEffect(() => {
@@ -33,7 +33,7 @@ function BookingSummary({ data, goBack }) {
       <p><strong>Estimated Fare:</strong> ₹{fare}</p>
 
       <div className="button-group">
-        <button className="confirm">Confirm Booking</button>
+        <button className="confirm" onClick={nextStep}>✅ Proceed to Payment</button>
         <button className="callback">Request Callback</button>
         <button className="back" onClick={goBack}>Go Back</button>
       </div>

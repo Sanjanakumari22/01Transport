@@ -16,7 +16,7 @@ const trucks = [
   'PARTLOAD & PARCEL SERVICE',
 ];
 
-export default function TruckSelection({ nextStep, update }) {
+export default function TruckSelection({ nextStep, update, goBack }) {
   const [selectedTruck, setSelectedTruck] = useState('');
 
   const handleNext = () => {
@@ -33,7 +33,13 @@ export default function TruckSelection({ nextStep, update }) {
           <option key={idx} value={truck}>{truck}</option>
         ))}
       </select>
-      <button onClick={handleNext}>Next</button>
+      <div className="button-group">
+        <button onClick={handleNext}>Next </button>
+        <button className="back" onClick={goBack}>Go Back</button>
+
+        
+
+      </div>
     </div>
   );
 }

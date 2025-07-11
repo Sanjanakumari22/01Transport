@@ -13,7 +13,7 @@ const goodsOptions = [
   'Construction Materials / Cement / Steel',
 ];
 
-export default function GoodsSelection({ nextStep, update }) {
+export default function GoodsSelection({ nextStep, update, goBack}) {
   const [goods, setGoods] = useState('');
 
   const handleNext = () => {
@@ -30,7 +30,12 @@ export default function GoodsSelection({ nextStep, update }) {
           <option key={idx} value={item}>{item}</option>
         ))}
       </select>
-      <button onClick={handleNext}>Next</button>
+      <div className="button-group">
+        <button onClick={handleNext}>Next</button>
+        <button className="back" onClick={goBack}>Go Back</button>
+        
+        
+      </div>
     </div>
   );
 }

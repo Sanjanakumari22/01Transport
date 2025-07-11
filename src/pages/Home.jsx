@@ -9,32 +9,39 @@ export default function Home() {
       className="home-page"
       style={{
         backgroundImage: "url('https://img.freepik.com/premium-vector/free-vector-3d-workers-unloading-boxes-from-truck_883906-3043.jpg')",
-        backgroundSize: 'contain',
+        backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
         minHeight: '100vh',
-        minWidth: '70vw',
+        width: '100vw',
         color: 'white',
         textAlign: 'center',
         position: 'relative',
-      }}>
-
-
+      }}
+    >
       <nav className="navbar">
-  <div className="logo-container"> 
-    <img src="../logo.webp" alt="Truck Logo" className="logo" style={{ height: "50px", width: "60px" }} />
-    <span className="brand-name"><strong>QuickLoaders</strong></span>
-  </div>
-  <div className="nav-links">
-    <Link to="/">Home</Link>
-    <Link to="/book">Register Now</Link>
-  </div>
-</nav>
+        <div className="logo-container">
+          <img src="/logo.png" alt="Truck Logo" className="logo" style={{ height: "50px", width: "60px" }} />
+          <span className="brand-name"><strong>QuickLoaders</strong></span>
+        </div>
+        <div className="nav-links">
+          <Link to="/">Home</Link>
+          <Link to="/book">Register Now</Link>
+          <Link to="/apply-job">Apply for Job</Link>
+          <Link to="/customer-booking">Book Now</Link>
+          <Link to="/login">Login</Link>
+          <Link to="/admin">Admin</Link>
+          <Link to="/track">Track Booking</Link>
+          <Link to="/contact">Contact Us</Link>
+
+        </div>
+      </nav>
 
       <div className="hero">
+        
         <h1><span style={{ color: 'black' }}>Welcome to Truck Booking Service</span></h1>
         <p><span style={{ color: 'blue' }}>Book reliable trucks online across India</span></p>
-        <Link to="/book" className="hero-button">Book Now</Link>
+        <Link className="hero-button" to="/book">Get Started</Link>
       </div>
     </div>
   );

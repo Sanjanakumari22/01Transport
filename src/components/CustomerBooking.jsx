@@ -1,12 +1,13 @@
 // src/components/RegisterForm.jsx
 import React, { useState } from 'react';
 
-export default function RegisterForm({ nextStep, update }) {
+function CustomerBooking({ nextStep, update, goBack}) {
   const [form, setForm] = useState({
     name: '',
     email: '',
     phone: '',
     password: '',
+    
   });
 
   const handleChange = (e) => {
@@ -29,7 +30,15 @@ export default function RegisterForm({ nextStep, update }) {
       <input type="email" name="email" placeholder="Email" value={form.email} onChange={handleChange} />
       <input type="tel" name="phone" placeholder="Phone Number" value={form.phone} onChange={handleChange} />
       <input type="password" name="password" placeholder="Password" value={form.password} onChange={handleChange} />
-      <button onClick={handleNext}>Register & Next</button>
+      
+      <div className="button-group">
+        <button onClick={handleNext}>Register & Next</button>
+        <button onClick={() => nextStep('back')}>Back</button>
+        
+        
+      </div>
     </div>
   );
 }
+
+export default CustomerBooking;
