@@ -19,6 +19,13 @@ body {
   margin-bottom: 20px;
   font-size: 28px;
   text-align: center;
+  margin-bottom: 80px;
+}
+.title-logo {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+
 }
 
 .card-container {
@@ -68,7 +75,7 @@ button:hover {
 
 .confirm { background-color: #28a745; }
 .callback { background-color: #17a2b8; }
-.back { background-color: #6c757d; }
+.back { background-color: #02467e; }
 
 .truck-grid {
   display: grid;
@@ -107,7 +114,7 @@ button:hover {
   max-width: 600px;
   margin: 30px auto;
   padding: 20px;
-  background: #cf7171;
+  background: #db7878;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   color: white;
@@ -143,8 +150,8 @@ button:hover {
 }
 
 .autocomplete-dropdown {
-  background: white;
-  border: 1px solid #ccc;
+  background: rgb(255, 255, 255);
+  border: 1px solid #fd0303;
   border-radius: 8px;
   max-height: 200px;
   overflow-y: auto;
@@ -161,4 +168,6 @@ button:hover {
 .autocomplete-dropdown div:hover {
   background-color: #eee;
 }
+
+
 

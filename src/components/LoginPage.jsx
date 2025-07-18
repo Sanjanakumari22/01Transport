@@ -1,20 +1,29 @@
 // src/components/LoginPage.jsx
 import React, { useState } from 'react';
- // optional, for styling
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../firebase';
+import { useNavigate, Link } from 'react-router-dom'; // ✅ Link added
 
-function LoginPage() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
 
-  const handleLogin = (e) => {
+
+export default function LoginPage() {
+  const [form, setForm] = useState({ email: '', password: '' });
+  const navigate = useNavigate();
+
+  const handleChange = (e) =>
+    setForm({ ...form, [e.target.name]: e.target.value });
+
+  const handleLogin = async (e) => {
     e.preventDefault();
-    if (!email || !password) {
-      alert('Please enter email and password');
-      return;
+    try {
+      const { email, password } = form;
+      const userCred = await signInWithEmailAndPassword(auth, email, password);
+      console.log('Logged in:', userCred.user);
+       navigate('/dashboard');
+    } catch (err) {
+      console.error('Login Error:', err.code, err.message);
+      alert(err.message);
     }
-
-    // Dummy login check (replace with real authentication)
-    alert('Login successful!');
   };
 
   return (
@@ -22,23 +31,29 @@ function LoginPage() {
       <h2>Login to QuickLoaders</h2>
       <form onSubmit={handleLogin}>
         <input
+          name="email"
           type="email"
           placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={form.email}
+          onChange={handleChange}
           required
         />
         <input
+          name="password"
           type="password"
           placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={form.password}
+          onChange={handleChange}
           required
         />
         <button type="submit">Login</button>
+        
       </form>
+
+      {/* ✅ Forgot Password link */}
+      <p style={{ marginTop: '10px' }}>
+        <Link to="/forgot-password">Forgot Password?</Link>
+      </p>
     </div>
   );
 }
-
-export default LoginPage;

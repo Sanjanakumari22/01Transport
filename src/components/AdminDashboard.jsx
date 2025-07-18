@@ -1,6 +1,7 @@
 // src/components/AdminDashboard.jsx
 import React from 'react';
 import '../pages/AdminDashboard.css'; 
+import BookingsList from './BookingsList';
 
 export default function AdminDashboard() {
   return (
